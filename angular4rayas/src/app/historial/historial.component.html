@@ -1,0 +1,31 @@
+<div id="contPrincipal" class="container">
+  <div class="row" id="filaTitulo">
+    <div class="col-4">
+      <button type="button" id="botonTitulo" class="btn btn-outline-light boton" routerLink="">Volver al menú</button>
+    </div>
+    <div class="col-8">
+      <h1 id="titulo">Historial</h1>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-striped table-class" id="table-id">
+      <thead>
+        <tr>
+          <th>IdTablero</th>
+          <th>Nombre del jugador 1</th>
+          <th>Nombre del jugador 2</th>
+          <th>Ganador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aux of registro">
+          <td>{{ aux.idTablero }}</td>
+          <td>{{ aux.nombreJugador1 }}</td>
+          <td>{{ aux.nombreJugador2 }}</td>
+          <td>{{ aux.ganador }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>

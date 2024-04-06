@@ -1,0 +1,38 @@
+
+<!-- Encabezado con Barra de Navegación de Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Conecta 4</a>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div id="contPrincipal" class="container">
+    <!-- Título Principal -->
+    <div class="row">
+      <div class="col-4">
+          <button type="button" id="botonTitulo" class="btn btn-outline-light boton" routerLink="">Volver al menú</button>
+      </div>
+      <div class="col-8">
+          <h1 id="titulo">Uniéndote a nueva partida</h1>
+      </div>
+  </div>
+  
+  </div>
+  <div id="menu" class="row align-items-md-stretch">
+    <div class="col-md-12">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        
+        <div id="titulo_menu">
+          <h2>Introduce tu nombre y el código de la sesión para jugar:</h2>
+        </div>
+        <br>
+        <div id="errorDiv" class="text-dange">{{ errorMessage }}</div>
+        <div id="elementos-menu">
+            <input id="input-nombre" class="form-control input-texto" type="text" placeholder="Introduce aquí el nombre" [(ngModel)]="nombreJugador">
+            <input id="input-partida" class="form-control input-texto" type="text" placeholder="Introduce aquí el codigo" [(ngModel)]="idPartida">
+            <button class="btn btn-outline-light boton" type="button" (click)="unirsePartida()">Unirse a la partida</button>
+        </div>
+      </div>
+    </div>
+    
+       
+  </div>
