@@ -15,7 +15,7 @@ export class SocketService {
    }
 
   suscribe(topic?: string, callback?: any) {
-    this.socket = new SockJS('http://localhost:5433/ws');
+    this.socket = new SockJS('http://localhost:5435/ws');
     this.stompClient = Stomp.over(this.socket)
     this.stompClient.connect({}, () => {
       console.log("CONECTADOOOOOOOOOOOOOOOOO");

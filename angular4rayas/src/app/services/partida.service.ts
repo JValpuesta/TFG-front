@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PartidaService {
 
-  apiUrl = "http://localhost:5433"
+  apiUrl = "http://localhost:5435"
 
   constructor(private http: HttpClient) { }
 
