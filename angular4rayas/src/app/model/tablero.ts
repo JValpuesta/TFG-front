@@ -1,11 +1,8 @@
 export interface Tablero {
   idTablero: number;
-  nombreJugador1: string;
-  ipCliente1: string;
-  nombreJugador2: string;
-  ipCliente2: string;
+  user1: number;
+  user2: number;
   posicion: number[][];
-  historial: number[];
   ganador: string | null;
   turno: number;
 }

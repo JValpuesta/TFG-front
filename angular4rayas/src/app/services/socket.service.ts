@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as Stomp from 'stompjs';
-import { Tablero } from '../model/tablero';
 import * as SockJS from 'sockjs-client';
 
 @Injectable({
@@ -11,21 +10,18 @@ export class SocketService {
 
   stompClient: any;
 
-  constructor() {
-   }
+  constructor() {}
 
   suscribe(topic?: string, callback?: any) {
-    this.socket = new SockJS('http://localhost:5435/ws');
+    this.socket = new SockJS('http://localhost:9023/ws');
     this.stompClient = Stomp.over(this.socket)
     this.stompClient.connect({}, () => {
-      console.log("CONECTADOOOOOOOOOOOOOOOOO");
+      console.log("CONECTED");
       return this.suscribeToTopic(topic, callback);
     });
   
    }
-  
-   
-  
+
    suscribeToTopic(topic?: string, callback?: any) {
     if(topic == undefined){
       topic = "";
@@ -36,7 +32,7 @@ export class SocketService {
   
     })
    }
-   
+
    unsubscribe() {
     if (this.stompClient && this.stompClient.connected) {
       this.stompClient.disconnect();

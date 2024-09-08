@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Fireworks } from 'fireworks-js'
 import { PrincipalComponent } from './principal.component';
 
 describe('PrincipalComponent', () => {

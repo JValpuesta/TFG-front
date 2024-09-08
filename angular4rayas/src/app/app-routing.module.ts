@@ -5,8 +5,7 @@ import { NuevaComponent } from './nueva/nueva.component';
 import { CreandoPartidaComponent } from './creando-partida/creando-partida.component';
 import { UnirseComponent } from './unirse/unirse.component';
 import { TableroComponent } from './tablero/tablero.component';
-import { PartidasEmpezadasComponent } from './partidas-empezadas/partidas-empezadas.component';
-import { HistorialComponent } from './historial/historial.component';
+import { PartidasEmpezadasComponent } from './reglas/reglas.component';
 
 const routes: Routes = [
   {path: '', component: PrincipalComponent},
@@ -14,8 +13,7 @@ const routes: Routes = [
   {path: 'unirse', component: UnirseComponent },
   {path: 'tablero', component: TableroComponent },
   {path: 'nueva', component: NuevaComponent},
-  {path: 'partidas', component: PartidasEmpezadasComponent},
-  {path: 'historial', component: HistorialComponent}
+  {path: 'partidas', component: PartidasEmpezadasComponent}
 ];
 
 @NgModule({

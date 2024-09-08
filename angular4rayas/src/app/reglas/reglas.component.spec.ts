@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PartidasEmpezadasComponent } from './partidas-empezadas.component';
+import { PartidasEmpezadasComponent } from './reglas.component';
 
 describe('PartidasEmpezadasComponent', () => {
   let component: PartidasEmpezadasComponent;

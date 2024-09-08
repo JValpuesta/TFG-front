@@ -13,7 +13,7 @@
 </div>
 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <div class="tabla" id="tabla" #tabla>
-  <div id="0" class="column" #column1 (click)="cosas(column1)">
+  <div id="0" class="column" #column1 (click)="aniadirFicha(column1)">
     <li></li>
     <span></span>
     <li></li>
@@ -27,7 +27,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="1" class="column" #column2 (click)="cosas(column2)">
+  <div id="1" class="column" #column2 (click)="aniadirFicha(column2)">
     <li></li>
     <span></span>
     <li></li>
@@ -41,7 +41,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="2" class="column" #column3 (click)="cosas(column3)">
+  <div id="2" class="column" #column3 (click)="aniadirFicha(column3)">
     <li></li>
     <span></span>
     <li></li>
@@ -55,7 +55,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="3" class="column" #column4 (click)="cosas(column4)">
+  <div id="3" class="column" #column4 (click)="aniadirFicha(column4)">
     <li></li>
     <span></span>
     <li></li>
@@ -69,7 +69,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="4" class="column" #column5 (click)="cosas(column5)">
+  <div id="4" class="column" #column5 (click)="aniadirFicha(column5)">
     <li></li>
     <span></span>
     <li></li>
@@ -83,7 +83,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="5" class="column" #column6 (click)="cosas(column6)">
+  <div id="5" class="column" #column6 (click)="aniadirFicha(column6)">
     <li></li>
     <span></span>
     <li></li>
@@ -97,7 +97,7 @@
     <li></li>
     <span></span>
   </div>
-  <div id="6" class="last-child column" #column7 (click)="cosas(column7)">
+  <div id="6" class="last-child column" #column7 (click)="aniadirFicha(column7)">
     <li></li>
     <span></span>
     <li></li>

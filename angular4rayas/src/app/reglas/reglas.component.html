@@ -1,5 +1,4 @@
 <div id="contPrincipal" class="container">
-    <!-- Título Principal -->
     <div class="row" id="filaTitulo">
       <div class="col-4">
           <button type="button" id="botonTitulo" class="btn btn-outline-light boton" routerLink="">Volver al menu</button>
@@ -17,6 +16,7 @@
         <section>
             <h2>Tablero</h2>
             <p>El tablero consta de 7 columnas y 6 filas. Los jugadores colocan fichas en las columnas, que caen hacia abajo y ocupan el espacio más bajo disponible en la columna.</p>
+            <p>Si una columna se llena, no se podrán añadir más fichas en ella.</p>
         </section>
         <section>
             <h2>Turnos</h2>
@@ -24,14 +24,8 @@
         </section>
         <section>
             <h2>Victoria</h2>
-            <p>El juego termina cuando un jugador conecta cuatro fichas de su color en fila. Puede ser horizontal, vertical o diagonalmente. Si el tablero se llena sin un ganador, el juego termina en empate.</p>
-        </section>
-        <section>
-            <h2>Reglas adicionales</h2>
-            <ul>
-                <li>Si una columna se llena, no se podrán añadir más fichas.</li>
-                <li>El juego se puede jugar en varias rondas, alternando los turnos para comenzar.</li>
-            </ul>
+            <p>El juego termina cuando un jugador conecta cuatro fichas de su color consecutivas. Puede ser horizontal, vertical o diagonalmente.</p>
+            <p>Si el tablero se llena sin un ganador, el juego termina en empate.</p>
         </section>
     </main>
     <footer>

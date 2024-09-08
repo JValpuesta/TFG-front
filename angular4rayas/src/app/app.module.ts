@@ -9,10 +9,9 @@ import { CreandoPartidaComponent } from './creando-partida/creando-partida.compo
 import { FormsModule } from '@angular/forms';
 import { UnirseComponent } from './unirse/unirse.component';
 import { TableroComponent } from './tablero/tablero.component';
-import { PartidasEmpezadasComponent } from './partidas-empezadas/partidas-empezadas.component';
+import { PartidasEmpezadasComponent } from './reglas/reglas.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HistorialComponent } from './historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { HistorialComponent } from './historial/historial.component';
     CreandoPartidaComponent,
     UnirseComponent,
     TableroComponent,
-    PartidasEmpezadasComponent,
-    HistorialComponent
+    PartidasEmpezadasComponent
   ],
   imports: [
     HttpClientModule,

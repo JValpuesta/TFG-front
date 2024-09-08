@@ -19,7 +19,7 @@ export class TableroComponent implements OnInit{
   tablero!: Tablero;
   ganador: boolean = false;
 
-  constructor(private route: ActivatedRoute, private socket: SocketService, private partidaService: PartidaService,private spinner: NgxSpinnerService) {
+  constructor(private route: ActivatedRoute, private socket: SocketService, private partidaService: PartidaService, private spinner: NgxSpinnerService) {
     this.route.queryParams.subscribe(params => {
       const idParam = params['idPartida'];
       this.jugador = params['jugador']
@@ -38,7 +38,7 @@ export class TableroComponent implements OnInit{
   ngOnInit() {
     this.socket.suscribe(`tablero/${this.id}/${this.jugador}`, (res: any) => {
       console.log("Mensaje recibido: " + res);
-      var tableroo: Tablero = JSON.parse(res) as Tablero;
+      var tablero: Tablero = JSON.parse(res) as Tablero;
       
         this.spinner.hide()
         if(this.tablero == undefined){
@@ -68,7 +68,7 @@ export class TableroComponent implements OnInit{
 
         var columns = document.querySelectorAll('.column');
 
-        this.tableroAntiguo.forEach((fila, filaIndex) => {
+        this.tableroAntiguo.forEach((fila) => {
           fila.forEach((columna, columnaIndex) => {
               if(columna == 1){
                 const disc = document.createElement('div'); 
@@ -80,24 +80,17 @@ export class TableroComponent implements OnInit{
                 disc.classList.add('disc', 'yellow');  
                 columns[columnaIndex].appendChild(disc)
               }
-        })     
+        })
       })
-      if(tableroo.ganador != ''){
-        this.hayGanador(tableroo)
+      if(tablero.ganador != null){
+        this.hayGanador(tablero)
       }
     })
   }
-  
-      
-  oneClick = 0;
 
-  cosas(column: HTMLElement) {
+  aniadirFicha(column: HTMLElement) {
     if(this.ganador == false){
       this.spinner.hide();
-    
-      this.oneClick++;
-      var divs = column.querySelectorAll('div');
-      var count = divs.length;
   
       if (this.jugador == 2) {
         const disc = document.createElement('div'); 
@@ -109,10 +102,10 @@ export class TableroComponent implements OnInit{
         column.appendChild(disc);
       }
   
-      this.partidaService.aniadirFicha(this.id,Number(column.id),this.jugador)
+      this.partidaService.aniadirFicha(this.id, Number(column.id), this.jugador)
         .then((res: Tablero)  => {
           this.spinner.show();
-          if(res.ganador != ''){
+          if(res.ganador != null){
             this.hayGanador(res)
           }
           this.tablero = res;
@@ -120,23 +113,48 @@ export class TableroComponent implements OnInit{
         .catch(err => {
           console.log(err)
         })       
-      
     }
   }
 
-  hayGanador(tablero: Tablero){
+  async hayGanador(tablero: Tablero) {
     this.spinner.hide();
-    var titulo = document.getElementById("tituloTablero")
-    var botonTitulo = document.getElementById("botonTitulo")
-    var pyro = document.getElementById("pyro")
-
-    if(titulo && botonTitulo && pyro){
-      titulo.innerHTML = "El ganador es: " + tablero.ganador;
-      titulo.style.marginLeft = "200px";
-      botonTitulo.style.visibility = "visible";
-      pyro.style.visibility = "visible";
-
+    const titulo = document.getElementById("tituloTablero");
+    const botonTitulo = document.getElementById("botonTitulo");
+    const pyro = document.getElementById("pyro");
+    if (titulo && botonTitulo && pyro) {
+      try {
+        console.log(tablero)
+        switch(tablero.ganador){
+          case "PLAYER_1": titulo.innerHTML = "El ganador es: " + await this.obtenerUsername(tablero.user1);
+          break;
+          case "PLAYER_2": titulo.innerHTML = "El ganador es: " + await this.obtenerUsername(tablero.user2);
+          break;
+          default: titulo.innerHTML = "Empate ¡Todos ganan!";
+          break;
+        }
+        titulo.style.marginLeft = "200px";
+        botonTitulo.style.visibility = "visible";
+        pyro.style.visibility = "visible";
+        
+      } catch (error) {
+        console.error("Error al obtener el nombre del ganador:", error);
+      }
     }
-    this.ganador = true
+    this.ganador = true;
   }
+  
+  async obtenerUsername(idJugador: number): Promise<string> {
+    try {
+      const jugador = await this.partidaService.obtenerJugador(idJugador);
+      if (jugador && jugador.username) {
+        return jugador.username;
+      } else {
+        throw new Error("El jugador no tiene un username.");
+      }
+    } catch (error) {
+      console.error("Error al obtener el username del jugador:", error);
+      throw error;
+    }
+  }
+  
 }
