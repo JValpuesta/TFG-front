@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Conecta 4</a>
+  </nav>
+  
+  <div id="contPrincipal" class="container mt-4">
+    <!-- Fila para el botón "Volver al menú" -->
+    <div class="row mb-4">
+      <div class="col-12 text-start">
+        <button type="button" id="botonTitulo" class="btn btn-outline-light" routerLink="">Volver al menú</button>
+      </div>
+    </div>
+    
+    <!-- Fila para el contenido principal -->
+    <div id="menu" class="row align-items-center">
+      <!-- Columna para la imagen -->
+      <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+        <img src="assets/robot.png" alt="Robot" class="img-fluid" style="max-width: 200px;">
+      </div>
+  
+      <!-- Columna para el contenido textual y el botón -->
+      <div class="col-12 col-md-6">
+        <div class="h-100 p-4 text-white bg-dark rounded-3 d-flex flex-column align-items-center">
+          <!-- Título -->
+          <div id="titulo_menu" class="mb-3">
+            <h2>Jugar contra el bot</h2>
+          </div>
+          
+          <!-- Mensaje de error -->
+          <div id="errorDiv" class="text-danger mb-3">
+            {{ errorMessage }}
+          </div>
+          
+          <!-- Contenido del menú -->
+          <div id="elementos-menu">
+            <h3 class="mb-3">Introduce tu nombre</h3>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control text-center" placeholder="Nombre" [(ngModel)]="nombre">
+            </div>
+            <button class="btn btn-outline-light" type="button" (click)="jugar()">¡Jugar!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -6,6 +6,7 @@ import { CreandoPartidaComponent } from './creando-partida/creando-partida.compo
 import { UnirseComponent } from './unirse/unirse.component';
 import { TableroComponent } from './tablero/tablero.component';
 import { PartidasEmpezadasComponent } from './reglas/reglas.component';
+import { JugarBotComponent } from './jugar-bot/jugar-bot.component';
 
 const routes: Routes = [
   {path: '', component: PrincipalComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path: 'unirse', component: UnirseComponent },
   {path: 'tablero', component: TableroComponent },
   {path: 'nueva', component: NuevaComponent},
-  {path: 'partidas', component: PartidasEmpezadasComponent}
+  {path: 'partidas', component: PartidasEmpezadasComponent},
+  { path: 'bot', component: JugarBotComponent },
+  //{ path: 'juego-bot', component: JuegoBotComponent }
 ];
 
 @NgModule({
