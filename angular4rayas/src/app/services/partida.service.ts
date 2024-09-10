@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,10 @@ export class PartidaService {
   async obtenerIP() {
     try {
       const response = await firstValueFrom(this.http.get<any>('https://api.ipify.org/?format=json'))
-      console.log("La IP es: " + response.ip);
-      return response.ip;
+      const hashedIp = CryptoJS.SHA256(response.ip).toString(CryptoJS.enc.Hex);
+      return hashedIp;
     } catch (error) {
-      console.error('Error al obtener la IP: ', error);
+      console.error('Error al cifrar la IP: ', error);
       throw error;
     }
   }
