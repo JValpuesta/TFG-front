@@ -14,7 +14,7 @@
     <div id="menu" class="row align-items-center">
       <!-- Columna para la imagen -->
       <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
-        <img src="assets/robot.png" alt="Robot" class="img-fluid" style="max-width: 200px;">
+        <img src="assets/robot.png" alt="Robot" class="img-fluid" style="max-width: 400px;">
       </div>
   
       <!-- Columna para el contenido textual y el botón -->
@@ -34,12 +34,15 @@
           <div id="elementos-menu">
             <h3 class="mb-3">Introduce tu nombre</h3>
             <div class="form-group mb-3">
-              <input type="text" class="form-control text-center" placeholder="Nombre" [(ngModel)]="nombre">
+              <input id="input-nombre" type="text" class="form-control text-center" placeholder="Nombre" [(ngModel)]="nombre">
             </div>
             <button class="btn btn-outline-light" type="button" (click)="jugar()">¡Jugar!</button>
           </div>
         </div>
       </div>
     </div>
+    <footer>        
+      <a href="https://es.vecteezy.com/png-gratis/robots">Robots PNGs por Vecteezy</a>
+    </footer>
   </div>
   

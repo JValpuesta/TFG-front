@@ -13,6 +13,7 @@ import { PartidasEmpezadasComponent } from './reglas/reglas.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JugarBotComponent } from './jugar-bot/jugar-bot.component';
+import { TableroBotComponent } from './tablero-bot/tablero-bot.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { JugarBotComponent } from './jugar-bot/jugar-bot.component';
     UnirseComponent,
     TableroComponent,
     PartidasEmpezadasComponent,
-    JugarBotComponent
+    JugarBotComponent,
+    TableroBotComponent
   ],
   imports: [
     HttpClientModule,

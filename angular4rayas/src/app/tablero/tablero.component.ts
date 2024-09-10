@@ -123,7 +123,6 @@ export class TableroComponent implements OnInit{
     const pyro = document.getElementById("pyro");
     if (titulo && botonTitulo && pyro) {
       try {
-        console.log(tablero)
         switch(tablero.ganador){
           case "PLAYER_1": titulo.innerHTML = "El ganador es: " + await this.obtenerUsername(tablero.user1);
           break;
