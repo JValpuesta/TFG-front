@@ -58,4 +58,21 @@ export class PartidaService {
     const urlBackend = `${this.apiUrl}/user/${idJugador}`;
     return firstValueFrom(this.http.get<any>(urlBackend));
   }
+
+  async jugarBot() {
+    const nombreJugador = (document.getElementById('input-nombre') as HTMLInputElement).value;
+    const ipJugador = await this.obtenerIP();
+    const urlBackend = `${this.apiUrl}/bot`;
+    const body = {
+      username: nombreJugador,
+      ip: ipJugador
+    };
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return firstValueFrom(this.http.post<any>(urlBackend, body, { headers }));
+  }
+
+  async aniadirFichaBot(idPartida: number,column: number){
+    const urlBackend = `${this.apiUrl}/bot/${idPartida}?columna=${column}`;
+    return firstValueFrom(this.http.put<any>(urlBackend, undefined));
+  }
 }
