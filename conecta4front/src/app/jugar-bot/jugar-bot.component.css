@@ -1,0 +1,69 @@
+/* Imagen */
+img {
+  width: 100%;
+  height: auto; /* La imagen mantendrá su proporción */
+}
+
+footer {
+  margin-top: 150px;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+}
+
+#elementos-menu{
+  justify-content: center;
+  align-items: center;
+}
+
+#contPrincipal {
+  display: grid;
+  justify-content: normal;
+}
+
+/* Botón "Volver al menú" */
+#botonTitulo {
+  background-color: #343a40;
+  font-size: 25px;
+  transition: background-color 0.3s;
+}
+
+#botonTitulo:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Ajustes generales para el contenedor principal */
+#contPrincipal {
+  padding-top: 20px; /* Ajusta el espacio en la parte superior si es necesario */
+}
+
+#menu {
+  /* Ajusta la altura mínima si es necesario para centrar el contenido */
+  min-height: 60vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#elementos-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#titulo_menu h2, #elementos-menu h3 {
+  margin: 0; /* Elimina márgenes por defecto para alineación precisa */
+}
+
+.text-center h3 {
+  margin: 0;
+}
+
+
+

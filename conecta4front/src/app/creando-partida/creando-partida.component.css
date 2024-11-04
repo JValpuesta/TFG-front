@@ -1,0 +1,21 @@
+#elementos-menu{
+    justify-content: center;
+    align-items: center;
+}
+
+#contPrincipal {
+    display: grid;
+    justify-content: normal;
+}
+
+#botonTitulo {
+    background-color: #343a40;
+    font-size: 25px;
+    /* Otros estilos existentes */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+#botonTitulo:hover {
+    background-color: white; /* Color de fondo que deseas al pasar el cursor */
+    color: black; /* Cambiar el color del texto para que sea legible en el nuevo fondo */
+}
